@@ -1,13 +1,6 @@
+.TROLL{
+    font-size: 5px;
+}
 body{
-    font-family: rosewood, Time News Roman;
-    background-color: whitesmoke;
-}
-.a{
-color: green;
-}
-.b{
-    color: red;
-}
-.c{
-    color: cyan;
+    background-color: #52a535;
 }
