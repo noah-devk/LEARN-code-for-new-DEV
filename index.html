@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <html class="dark" lang="vi"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -255,11 +257,13 @@
 <main>
 <!-- Hero Section -->
 <section class="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-margin-mobile overflow-hidden">
+<!-- Full Bleed Background -->
 <div class="absolute inset-0 z-0 overflow-hidden">
-<img alt="Minecraft Sulfur Cave landscape" class="w-full h-full object-cover animate-ken-burns" src="https://lh3.googleusercontent.com/aida/AP1WRLvOysV2ZgaxeczmksTXU8umIew_DbvRXnlfcVkUPU65TOx4Yf5xOuuAe1MWFCp19ZeD5FEzN_uv8aMVYQ5TQNCTup1mg3agcxIAOIJdVXLCeqdGTY7plktiH8qd9dExgJ4Nc-Yz7vhxKPJmZFvuMg9dUx6I-F4zw8lSWpJTgfXDvSrCafoVh6GwMV6s-BpN3bzyKffGlhgg8st7pga5Tt8tn_HZwSykKGVkLY69hkC7RNwlWHifm5n3M8nd"/>
+<img alt="Minecraft Sulfur Cave" class="w-full h-full object-cover animate-ken-burns" src="https://lh3.googleusercontent.com/aida/AP1WRLvOysV2ZgaxeczmksTXU8umIew_DbvRXnlfcVkUPU65TOx4Yf5xOuuAe1MWFCp19ZeD5FEzN_uv8aMVYQ5TQNCTup1mg3agcxIAOIJdVXLCeqdGTY7plktiH8qd9dExgJ4Nc-Yz7vhxKPJmZFvuMg9dUx6I-F4zw8lSWpJTgfXDvSrCafoVh6GwMV6s-BpN3bzyKffGlhgg8st7pga5Tt8tn_HZwSykKGVkLY69hkC7RNwlWHifm5n3M8nd"/>
 <canvas class="absolute inset-0 w-full h-full opacity-60" id="toxic-mist-canvas"></canvas>
 <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
 </div>
+<!-- Hero Content -->
 <div class="relative z-10 max-w-3xl flex flex-col items-center gap-8 animate-in fade-in slide-in-from-bottom-10 duration-700">
 <div class="inline-block px-4 py-1 bg-xp-green text-on-primary-container font-label-caps text-label-caps uppercase rounded-sm mb-4">
                 Phiên Bản Mới: Hang Lưu Huỳnh
@@ -271,7 +275,7 @@
                 Dấn thân vào những hang động độc hại chứa đầy tinh thể vàng huyền bí. Một thế giới ngầm nguy hiểm đang chờ đợi bạn.
             </p>
 <div class="flex flex-col sm:flex-row gap-4 mt-8 w-full sm:w-auto">
-<div class="flex justify-center w-full" id="download-cta-container">
+<div id="download-cta-container">
 <button class="hidden pixel-texture bg-primary-container text-on-primary-container font-button-text text-button-text px-10 py-5 beveled-edge uppercase items-center justify-center gap-3 active:translate-x-[2px] active:translate-y-[2px] btn-download-animated" id="trigger-download-modal">
 <span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>download</span> TẢI MINECRAFT MIỄN PHÍ
                     </button>
@@ -280,38 +284,58 @@
                     </button>
 </div>
 </div>
+<!-- XP Bar Decorative Element -->
 <div class="w-64 h-3 bg-surface-container-highest border border-outline/30 mt-12 relative overflow-hidden">
 <div class="absolute top-0 left-0 h-full bg-xp-green w-3/4 shadow-[0_0_15px_rgba(198,255,0,0.6)]"></div>
 <div class="absolute inset-0 flex items-center justify-center text-[8px] font-label-caps text-white pointer-events-none uppercase">ĐANG TẢI TÀI NGUYÊN... 75%</div>
 </div>
 </div>
 </section>
-<!-- Content Section -->
+<!-- Content Section: Sulfur Cave Update -->
 <section class="py-section-gap px-margin-mobile max-w-container-max mx-auto scroll-mt-24" id="update-section">
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Main Feature Card -->
 <div class="lg:col-span-8 glass-card beveled-edge p-8 md:p-12 animate-float-subtle">
 <div class="flex items-center gap-3 text-xp-green mb-6">
 <span class="material-symbols-outlined">science</span>
 <span class="font-label-caps text-label-caps uppercase">Bản cập nhật Hang Lưu Huỳnh</span>
 </div>
-<h3 class="font-headline-md text-headline-md mb-6 text-primary uppercase">The Sulfur Cave Update</h3>
+<h3 class="font-headline-md text-headline-md mb-6 text-primary">The Sulfur Cave Update</h3>
 <div class="space-y-6 font-body-lg text-body-lg text-on-surface-variant">
-<p>Bản cập nhật <span class="text-secondary font-bold italic">"Hang Lưu Huỳnh"</span> giới thiệu một hệ sinh thái ngầm hoàn toàn mới. Khám phá những cấu trúc hang động độc đáo, nơi các **Tinh thể Lưu huỳnh** phát sáng rực rỡ nhưng ẩn chứa đầy rẫy hiểm nguy.</p>
-<p>Hãy cẩn trọng với những **Hồ Axit** độc hại và làn hơi lưu huỳnh bốc lên từ lòng đất. Để sống sót, người chơi cần chế tạo các bộ đồ bảo hộ mới và sử dụng các khối tinh thể để khai thác năng lượng hóa học chưa từng thấy.</p>
+<p>
+                        Bản cập nhật <span class="text-secondary font-bold italic">"Hang Lưu Huỳnh"</span> giới thiệu một hệ sinh thái ngầm hoàn toàn mới. Khám phá những cấu trúc hang động độc đáo, nơi các **Tinh thể Lưu huỳnh** phát sáng rực rỡ nhưng ẩn chứa đầy rẫy hiểm nguy.
+                    </p>
+<p>
+                        Hãy cẩn trọng với những **Hồ Axit** độc hại và làn hơi lưu huỳnh bốc lên từ lòng đất. Để sống sót, người chơi cần chế tạo các bộ đồ bảo hộ mới và sử dụng các khối tinh thể để khai thác năng lượng hóa học chưa từng thấy.
+                    </p>
 <div class="bg-surface-container-high/50 p-6 rounded-lg border-l-4 border-xp-green italic">
                         "Bóng tối không còn là nỗi sợ duy nhất. Làn khói vàng và những hồ axit sẽ thử thách bản năng sinh tồn của bạn."
                     </div>
 </div>
 </div>
+<!-- Info Sidebar -->
 <div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Tech Specs Card -->
 <div class="bg-dirt-darker beveled-edge p-6 animate-float-delayed">
 <h4 class="font-label-caps text-label-caps uppercase text-secondary mb-4 border-b border-white/10 pb-2">Thông Số Bản Cập Nhật</h4>
 <ul class="space-y-4 font-body-md text-body-md">
-<li class="flex justify-between border-b border-white/5 pb-2"><span class="text-on-surface-variant">Chủ đề:</span><span class="font-bold text-xp-green">Hang Lưu Huỳnh</span></li>
-<li class="flex justify-between border-b border-white/5 pb-2"><span class="text-on-surface-variant">Dung lượng:</span><span class="font-bold text-white">~520 MB</span></li>
-<li class="flex justify-between border-b border-white/5 pb-2"><span class="text-on-surface-variant">Trạng thái:</span><span class="font-bold text-primary-fixed flex items-center gap-1"><span class="material-symbols-outlined text-sm">verified</span> Đã xác minh</span></li>
+<li class="flex justify-between border-b border-white/5 pb-2">
+<span class="text-on-surface-variant">Chủ đề:</span>
+<span class="font-bold text-xp-green">Hang Lưu Huỳnh</span>
+</li>
+<li class="flex justify-between border-b border-white/5 pb-2">
+<span class="text-on-surface-variant">Dung lượng:</span>
+<span class="font-bold text-white">~520 MB</span>
+</li>
+<li class="flex justify-between border-b border-white/5 pb-2">
+<span class="text-on-surface-variant">Trạng thái:</span>
+<span class="font-bold text-primary-fixed flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">verified</span> Đã xác minh
+                            </span>
+</li>
 </ul>
 </div>
+<!-- Credits Card -->
 <div class="bg-surface-container-highest beveled-edge p-6 flex-grow animate-float-subtle">
 <div class="flex items-center gap-2 mb-4 text-tertiary">
 <span class="material-symbols-outlined">share</span>
@@ -321,24 +345,30 @@
                         Nội dung và hình ảnh được tổng hợp từ các nền tảng sáng tạo. Cảm ơn cộng đồng đã chia sẻ những ý tưởng tuyệt vời về phiên bản Hang Lưu Huỳnh huyền bí này.
                     </p>
 <div class="mt-6 pt-4 border-t border-white/5 flex gap-4">
-<div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white/50"><span class="material-symbols-outlined">video_library</span></div>
-<div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white/50"><span class="material-symbols-outlined">star</span></div>
+<div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white/50">
+<span class="material-symbols-outlined">video_library</span>
+</div>
+<div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white/50">
+<span class="material-symbols-outlined">star</span>
+</div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<!-- Newsletter -->
+<!-- Newsletter / CTA -->
 <section class="py-section-gap px-margin-mobile bg-surface-container-lowest border-y border-outline-variant scroll-mt-24" id="newsletter-section">
 <div class="max-w-container-max mx-auto text-center flex flex-col items-center gap-6">
 <span class="material-symbols-outlined text-xp-green text-5xl">cloud_download</span>
-<h3 class="font-headline-md text-headline-md uppercase">Sẵn sàng dấn thân vào hang tối?</h3>
+<h3 class="font-headline-md text-headline-md">Sẵn sàng dấn thân vào hang tối?</h3>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
                 Đừng bỏ lỡ cơ hội trải nghiệm sớm nhất bản cập nhật Hang Lưu Huỳnh. Tải về ngay hôm nay và chinh phục thử thách mới.
             </p>
 <form class="flex flex-col sm:flex-row gap-4 w-full max-w-md mt-4">
 <input class="flex-grow bg-surface-charcoal border-2 border-outline-variant focus:border-xp-green text-white px-4 py-3 outline-none transition-colors" placeholder="Nhập email nhận tin tức..." type="email"/>
-<button class="bg-secondary-container text-on-secondary-container px-8 py-3 font-button-text text-button-text uppercase active:scale-95 transition-transform" type="button">Đăng Ký</button>
+<button class="bg-secondary-container text-on-secondary-container px-8 py-3 font-button-text text-button-text uppercase active:scale-95 transition-transform" type="button">
+                    Đăng Ký
+                </button>
 </form>
 </div>
 </section>
@@ -347,11 +377,14 @@
 <div class="max-w-container-max mx-auto px-gutter flex flex-col md:flex-row justify-between items-center gap-base">
 <div class="flex flex-col items-center md:items-start gap-2">
 <span class="font-label-caps text-label-caps text-outline uppercase tracking-widest">MINECRAFT HANG LƯU HUỲNH</span>
-<p class="font-body-md text-body-md text-secondary opacity-70">© 2024 Mojang AB. TM Microsoft Corporation.</p>
+<p class="font-body-md text-body-md text-secondary opacity-70">
+                © 2024 Mojang AB. TM Microsoft Corporation.
+            </p>
 </div>
 <nav class="flex flex-wrap justify-center gap-6">
 <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors underline cursor-pointer" href="#">EULA</a>
 <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors underline cursor-pointer" href="#">Chính sách bảo mật</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors underline cursor-pointer" href="#">Hướng dẫn thương hiệu</a>
 <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors underline cursor-pointer" href="#">Hỗ trợ</a>
 </nav>
 <div class="flex gap-4">
@@ -362,35 +395,48 @@
 </footer>
 <!-- Download Modal Overlay -->
 <div class="hidden fixed inset-0 z-[110] flex items-center justify-center p-gutter" id="download-modal">
-<div class="absolute inset-0 bg-background/90 backdrop-blur-md"></div>
+<div class="absolute inset-0 bg-background/90 backdrop-blur-md" id="download-modal-backdrop"></div>
 <div class="relative bg-surface-container-high border border-outline-variant p-8 w-full max-w-md beveled-edge pixel-texture">
 <div class="flex justify-between items-center mb-6">
 <h3 class="font-headline-md text-primary uppercase text-xl">TRÌNH TẢI MINECRAFT</h3>
-<button class="text-outline hover:text-white" id="close-download-modal"><span class="material-symbols-outlined">close</span></button>
+<button class="text-outline hover:text-white" id="close-modal"><span class="material-symbols-outlined">close</span></button>
 </div>
 <div class="space-y-6" id="modal-action-container">
-<p class="font-body-md text-on-surface-variant">Xác nhận tải về bản cập nhật Hang Lưu Huỳnh (Sulfur Cave Update)?</p>
-<button class="w-full bg-primary-container text-on-primary-container font-button-text text-button-text py-4 beveled-edge uppercase active:translate-x-[2px] active:translate-y-[2px] transition-transform" id="start-download-btn">XÁC NHẬN TẢI VỀ</button>
+<div class="space-y-6" id="os-selection-view">
+<p class="font-body-md text-on-surface-variant">Chọn hệ điều hành của bạn để bắt đầu tải bản cập nhật Hang Lưu Huỳnh:</p>
+<div class="grid grid-cols-2 gap-4">
+<button class="bg-surface-container-highest text-white font-button-text text-button-text py-4 beveled-edge uppercase hover:bg-xp-green hover:text-black transition-colors flex flex-col items-center gap-2" onclick="startOSDownload('WINDOWS')">
+<span class="material-symbols-outlined text-3xl">desktop_windows</span>WINDOWS (.exe)
+                    </button>
+<button class="bg-surface-container-highest text-white font-button-text text-button-text py-4 beveled-edge uppercase hover:bg-xp-green hover:text-black transition-colors flex flex-col items-center gap-2" onclick="startOSDownload('MACOS')">
+<span class="material-symbols-outlined text-3xl">desktop_mac</span>MACOS (.pkg)
+                    </button>
+</div>
+</div>
 </div>
 <div class="hidden space-y-4" id="download-progress-container">
-<div class="flex justify-between items-end font-label-caps text-xs text-xp-green">
-<span class="" id="download-status-text">DOWNLOADING... 0%</span>
-<span class="">FILE: sulfur_cave_v1.0.mc</span>
+<div class="flex flex-col gap-1 font-label-caps text-xs text-xp-green">
+<div class="flex justify-between">
+<span id="download-status-text">DOWNLOADING... 0%</span>
+<span id="download-file-name">FILE: ...</span>
+</div>
 </div>
 <div class="w-full h-4 bg-surface-container-lowest border border-outline/20">
-<div class="h-full bg-xp-green w-0 shadow-[0_0_10px_rgba(198,255,0,0.4)] transition-all duration-100 ease-linear" id="download-progress-bar"></div>
+<div class="h-full bg-xp-green w-0 shadow-[0_0_10px_rgba(198,255,0,0.4)]" id="download-progress-bar"></div>
 </div>
 </div>
 </div>
 </div>
 <script>
+    // --- Global State Management ---
     const State = {
         isLoggedIn: false,
-        isLoginMode: true,
-        get users() { return JSON.parse(localStorage.getItem('mc_users') || '{}'); },
-        set users(val) { localStorage.setItem('mc_users', JSON.stringify(val)); }
+        currentUser: null,
+        users: JSON.parse(localStorage.getItem('mc_users') || '{}'),
+        isLoginMode: true
     };
 
+    // --- DOM Elements ---
     const Dom = {
         authModal: document.getElementById('auth-modal'),
         authForm: document.getElementById('auth-form'),
@@ -415,14 +461,15 @@
         openMenuBtn: document.getElementById('open-menu'),
         closeMenuBtn: document.getElementById('close-menu'),
         downloadModal: document.getElementById('download-modal'),
-        startDownloadBtn: document.getElementById('start-download-btn'),
-        downloadProgressContainer: document.getElementById('download-progress-container'),
         modalActionContainer: document.getElementById('modal-action-container'),
+        downloadProgressContainer: document.getElementById('download-progress-container'),
         downloadProgressBar: document.getElementById('download-progress-bar'),
         downloadStatusText: document.getElementById('download-status-text'),
-        closeDownloadModalBtn: document.getElementById('close-download-modal')
+        closeDownloadModalBtn: document.getElementById('close-modal'),
+        downloadFileName: document.getElementById('download-file-name')
     };
 
+    // --- Auth Logic ---
     function toggleAuthMode() {
         State.isLoginMode = !State.isLoginMode;
         Dom.authTitle.innerText = State.isLoginMode ? 'ĐĂNG NHẬP' : 'ĐĂNG KÝ';
@@ -433,10 +480,10 @@
 
     function openAuthModal() {
         Dom.authModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
         Dom.authForm.classList.remove('hidden');
         Dom.authSuccessView.classList.add('hidden');
         Dom.authErrorMsg.classList.add('hidden');
-        document.body.style.overflow = 'hidden';
     }
 
     function closeAuthModal() {
@@ -449,8 +496,8 @@
         Dom.userProfileWidget.classList.remove('hidden');
         Dom.userProfileWidget.classList.add('flex');
         Dom.userProfileName.innerText = username.toUpperCase();
+        
         Dom.dummyDownloadBtn.classList.add('hidden');
-        Dom.dummyDownloadBtn.classList.remove('flex');
         Dom.mainDownloadBtn.classList.remove('hidden');
         Dom.mainDownloadBtn.classList.add('flex');
     }
@@ -459,6 +506,7 @@
         Dom.loginBtnHeader.classList.remove('hidden');
         Dom.userProfileWidget.classList.add('hidden');
         Dom.userProfileWidget.classList.remove('flex');
+        
         Dom.dummyDownloadBtn.classList.remove('hidden');
         Dom.dummyDownloadBtn.classList.add('flex');
         Dom.mainDownloadBtn.classList.add('hidden');
@@ -466,6 +514,7 @@
         localStorage.removeItem('currentUser');
     }
 
+    // --- Mobile Menu Logic ---
     function openMenu() {
         Dom.mobileMenu.classList.remove('invisible', 'opacity-0');
         Dom.mobileMenu.classList.add('visible', 'opacity-100');
@@ -484,19 +533,22 @@
         }, 300);
     }
 
-    function startDownloadSequence() {
+    // --- Download Sequence ---
+    function startOSDownload(os) {
         Dom.modalActionContainer.classList.add('hidden');
         Dom.downloadProgressContainer.classList.remove('hidden');
+        Dom.downloadFileName.innerText = os === 'WINDOWS' ? 'FILE: sulfur_cave_v1.0.exe' : 'FILE: sulfur_cave_v1.0.pkg';
+        
         let progress = 0;
-        const duration = 5000; // 5 seconds
+        const duration = 5000;
         const intervalTime = 50;
-        const increment = (100 / (duration / intervalTime));
+        const step = (intervalTime / duration) * 100;
 
-        const interval = setInterval(() => {
-            progress += increment;
+        const timer = setInterval(() => {
+            progress += step;
             if (progress >= 100) {
                 progress = 100;
-                clearInterval(interval);
+                clearInterval(timer);
                 showFinishButton();
             }
             Dom.downloadProgressBar.style.width = progress + '%';
@@ -507,118 +559,157 @@
     function showFinishButton() {
         Dom.downloadProgressContainer.classList.add('hidden');
         Dom.modalActionContainer.innerHTML = `
-            <button id="finish-download-btn" class="w-full bg-xp-green text-on-primary-container font-button-text text-button-text py-4 beveled-edge uppercase active:translate-x-[2px] active:translate-y-[2px] transition-transform">
-                FINISH
-            </button>
+            <div class="text-center space-y-4">
+                <p class="font-body-md text-xp-green">Tải xuống hoàn tất!</p>
+                <button id="finish-download-btn" class="w-full bg-xp-green text-on-primary-container font-button-text text-button-text py-4 beveled-edge uppercase active:translate-x-[2px] active:translate-y-[2px] transition-transform">
+                    KẾT THÚC
+                </button>
+            </div>
         `;
         Dom.modalActionContainer.classList.remove('hidden');
-        document.getElementById('finish-download-btn').onclick = () => {
+        
+        document.getElementById('finish-download-btn').addEventListener('click', () => {
             window.location.href = 'https://youtu.be/dQw4w9WgXcQ?si=bwGcGFQqYL4PRQtq';
-        };
+        });
     }
 
+    // --- Initialization ---
     function init() {
-        // Auth triggers
         document.querySelectorAll('.btn-auth-trigger').forEach(btn => {
-            btn.onclick = openAuthModal;
+            btn.addEventListener('click', openAuthModal);
         });
 
-        Dom.closeAuthBtn.onclick = closeAuthModal;
-        Dom.authBackdrop.onclick = closeAuthModal;
-        Dom.authToggleBtn.onclick = toggleAuthMode;
-        Dom.authContinueBtn.onclick = closeAuthModal;
-        Dom.logoutBtn.onclick = updateUIForLoggedOut;
-        Dom.openMenuBtn.onclick = openMenu;
-        Dom.closeMenuBtn.onclick = closeMenu;
-        Dom.mobileMenuBackdrop.onclick = closeMenu;
-        
-        Dom.closeDownloadModalBtn.onclick = () => {
-            Dom.downloadModal.classList.add('hidden');
-            document.body.style.overflow = '';
-        };
+        Dom.closeAuthBtn.addEventListener('click', closeAuthModal);
+        Dom.authBackdrop.addEventListener('click', closeAuthModal);
+        Dom.authToggleBtn.addEventListener('click', toggleAuthMode);
+        Dom.authContinueBtn.addEventListener('click', closeAuthModal);
 
-        Dom.authForm.onsubmit = (e) => {
+        Dom.authForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const username = document.getElementById('auth-username').value.trim();
             const password = document.getElementById('auth-password').value;
-            const currentUsers = State.users;
 
             if (State.isLoginMode) {
-                if (currentUsers[username] && currentUsers[username] === password) {
+                if (State.users[username] && State.users[username] === password) {
                     localStorage.setItem('currentUser', username);
-                    showSuccess(username, 'Đăng nhập thành công!');
+                    showAuthSuccess(username, 'Đăng nhập thành công!');
                 } else {
                     Dom.authErrorMsg.innerText = 'Tên đăng nhập hoặc mật khẩu không đúng.';
                     Dom.authErrorMsg.classList.remove('hidden');
                 }
             } else {
-                if (currentUsers[username]) {
+                if (State.users[username]) {
                     Dom.authErrorMsg.innerText = 'Người dùng đã tồn tại.';
                     Dom.authErrorMsg.classList.remove('hidden');
                 } else {
-                    currentUsers[username] = password;
-                    State.users = currentUsers;
+                    State.users[username] = password;
+                    localStorage.setItem('mc_users', JSON.stringify(State.users));
                     localStorage.setItem('currentUser', username);
-                    showSuccess(username, 'Đăng ký thành công!');
+                    showAuthSuccess(username, 'Đăng ký thành công!');
                 }
             }
-        };
+        });
 
-        function showSuccess(user, msg) {
+        function showAuthSuccess(username, message) {
             Dom.authForm.classList.add('hidden');
             Dom.authSuccessView.classList.remove('hidden');
-            document.getElementById('auth-success-msg').innerText = msg;
-            Dom.authDisplayName.innerText = user;
-            updateUIForLoggedIn(user);
+            document.getElementById('auth-success-msg').innerText = message;
+            Dom.authDisplayName.innerText = username;
+            updateUIForLoggedIn(username);
         }
 
-        Dom.mainDownloadBtn.onclick = () => {
+        Dom.logoutBtn.addEventListener('click', updateUIForLoggedOut);
+
+        Dom.openMenuBtn.addEventListener('click', openMenu);
+        Dom.closeMenuBtn.addEventListener('click', closeMenu);
+        Dom.mobileMenuBackdrop.addEventListener('click', closeMenu);
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        Dom.mainDownloadBtn.addEventListener('click', () => {
             Dom.downloadModal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
             Dom.modalActionContainer.innerHTML = `
-                <p class="font-body-md text-on-surface-variant">Xác nhận tải về bản cập nhật Hang Lưu Huỳnh (Sulfur Cave Update)?</p>
-                <button class="w-full bg-primary-container text-on-primary-container font-button-text text-button-text py-4 beveled-edge uppercase active:translate-x-[2px] active:translate-y-[2px] transition-transform" id="start-download-btn">XÁC NHẬN TẢI VỀ</button>
+                <div class="space-y-6" id="os-selection-view">
+                    <p class="font-body-md text-on-surface-variant">Chọn hệ điều hành của bạn để bắt đầu tải bản cập nhật Hang Lưu Huỳnh:</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <button class="bg-surface-container-highest text-white font-button-text text-button-text py-4 beveled-edge uppercase hover:bg-xp-green hover:text-black transition-colors flex flex-col items-center gap-2" onclick="startOSDownload('WINDOWS')">
+                            <span class="material-symbols-outlined text-3xl">desktop_windows</span>WINDOWS (.exe)
+                        </button>
+                        <button class="bg-surface-container-highest text-white font-button-text text-button-text py-4 beveled-edge uppercase hover:bg-xp-green hover:text-black transition-colors flex flex-col items-center gap-2" onclick="startOSDownload('MACOS')">
+                            <span class="material-symbols-outlined text-3xl">desktop_mac</span>MACOS (.pkg)
+                        </button>
+                    </div>
+                </div>
             `;
             Dom.modalActionContainer.classList.remove('hidden');
             Dom.downloadProgressContainer.classList.add('hidden');
-            Dom.downloadProgressBar.style.width = '0%';
-            document.getElementById('start-download-btn').onclick = startDownloadSequence;
-        };
+            document.body.style.overflow = 'hidden';
+        });
+
+        Dom.closeDownloadModalBtn.addEventListener('click', () => {
+            Dom.downloadModal.classList.add('hidden');
+            document.body.style.overflow = '';
+        });
 
         const savedUser = localStorage.getItem('currentUser');
-        if (savedUser) updateUIForLoggedIn(savedUser);
+        if (savedUser) {
+            updateUIForLoggedIn(savedUser);
+        }
+
+        initVisuals();
     }
 
-    // Mist Canvas Animation
-    const canvas = document.getElementById('toxic-mist-canvas');
-    if (canvas) {
-        const ctx = canvas.getContext('2d');
-        let width, height;
-        function resize() {
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
+    function initVisuals() {
+        const canvas = document.getElementById('toxic-mist-canvas');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            let width, height;
+
+            function resize() {
+                width = canvas.width = canvas.parentElement.clientWidth;
+                height = canvas.height = canvas.parentElement.clientHeight;
+            }
+
+            window.addEventListener('resize', resize);
+            resize();
+
+            const particles = [];
+            for (let i = 0; i < 50; i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    vx: (Math.random() - 0.5) * 1.5,
+                    vy: (Math.random() - 0.5) * 1,
+                    size: Math.random() * 80 + 40
+                });
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+                ctx.fillStyle = 'rgba(198, 255, 0, 0.05)';
+                ctx.filter = 'blur(40px)';
+                
+                particles.forEach(p => {
+                    p.x += p.vx;
+                    p.y += p.vy;
+
+                    if (p.x < -p.size) p.x = width + p.size;
+                    if (p.x > width + p.size) p.x = -p.size;
+                    if (p.y < -p.size) p.y = height + p.size;
+                    if (p.y > height + p.size) p.y = -p.size;
+
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                    ctx.fill();
+                });
+
+                requestAnimationFrame(animate);
+            }
+            animate();
         }
-        window.onresize = resize;
-        resize();
-        let particles = [];
-        for(let i=0; i<30; i++) particles.push({ x: Math.random()*width, y: Math.random()*height, vx: Math.random()*1-0.5, vy: -Math.random()*1, size: Math.random()*100+50 });
-        function draw() {
-            ctx.clearRect(0,0,width,height);
-            ctx.fillStyle = 'rgba(198, 255, 0, 0.05)';
-            particles.forEach(p => {
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.size, 0, Math.PI*2);
-                ctx.fill();
-                p.x += p.vx; p.y += p.vy;
-                if(p.y < -100) p.y = height + 100;
-                if(p.x < -100) p.x = width + 100;
-                if(p.x > width + 100) p.x = -100;
-            });
-            requestAnimationFrame(draw);
-        }
-        draw();
     }
 
-    init();
+    document.addEventListener('DOMContentLoaded', init);
 </script>
 </body></html>
