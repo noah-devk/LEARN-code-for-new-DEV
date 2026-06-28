@@ -201,9 +201,29 @@
             background: repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(198, 255, 0, 0.03) 1px, rgba(198, 255, 0, 0.03) 2px);
             pointer-events: none;
         }
+
+        /* Custom Modal Animations */
+        .modal-enter { animation: modal-scale-in 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        @keyframes modal-scale-in {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
     </style>
 </head>
 <body class="bg-background text-on-background min-h-screen selection:bg-xp-green selection:text-black overflow-x-hidden" id="top">
+<!-- Custom Modal Container -->
+<div class="fixed inset-0 z-[200] hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" id="custom-modal-overlay">
+<div class="w-full max-w-sm bg-surface-container-high border-2 border-outline-variant beveled-edge pixel-texture p-6 modal-enter" id="custom-modal-content">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-xp-green" id="modal-icon">info</span>
+<h3 class="font-display-lg text-lg uppercase text-xp-green tracking-tighter" id="modal-title">Hệ Thống</h3>
+</div>
+<p class="font-body-md text-on-surface-variant mb-8" id="modal-message">Thông báo hệ thống.</p>
+<button class="w-full bg-xp-green text-black font-button-text py-3 beveled-edge uppercase shadow-[4px_4px_0px_#003911] active:translate-x-[2px] active:translate-y-[2px] transition-transform" id="modal-confirm-btn">
+            Xác nhận
+        </button>
+</div>
+</div>
 <!-- Mobile Menu Overlay -->
 <div class="mobile-menu-overlay invisible opacity-0 fixed inset-0 z-[100] flex justify-end" id="mobile-menu">
 <div class="absolute inset-0 bg-background/80 backdrop-blur-sm" id="mobile-menu-backdrop"></div>
@@ -307,7 +327,7 @@
 </button>
 </div>
 <button class="btn-download-animated w-full bg-xp-green text-black font-button-text text-xl py-6 beveled-edge uppercase flex flex-col items-center gap-2 group" id="download-btn">
-<span id="btn-text" class="">TẢI XUỐNG (.EXE)</span>
+<span class="" id="btn-text">TẢI XUỐNG (.EXE)</span>
 <div class="hidden w-4/5 h-2 bg-black/30 rounded-full mt-2 overflow-hidden" id="progress-bar-container">
 <div class="h-full bg-white w-0 transition-all duration-[5000ms] ease-linear" id="progress-bar-fill"></div>
 </div>
@@ -326,9 +346,9 @@
 </div>
 <h3 class="font-display-lg text-3xl md:text-4xl uppercase text-white mb-4">Nhận thông tin cập nhật</h3>
 <p class="font-body-md text-on-surface-variant max-w-xl mx-auto mb-8">Dữ liệu của bạn sẽ được mã hóa và đồng bộ trực tiếp với Máy Chủ Trung Tâm của quản trị viên để nhận các bản vá bảo mật mới nhất.</p>
-<form class="max-w-md mx-auto flex flex-col md:flex-row gap-4" onsubmit="event.preventDefault(); alert('Dữ liệu đã được đồng bộ hóa thành công với Máy Chủ Trung Tâm!');">
+<form class="max-w-md mx-auto flex flex-col md:flex-row gap-4" id="sync-form">
 <div class="relative flex-1">
-<input class="w-full bg-surface-charcoal border-2 border-outline-variant focus:border-xp-green text-white px-4 py-3 outline-none transition-colors rounded-none font-label-caps text-sm" placeholder="PLAYER_ID@SYSTEM.NET" required="" type="email">
+<input class="w-full bg-surface-charcoal border-2 border-outline-variant focus:border-xp-green text-white px-4 py-3 outline-none transition-colors rounded-none font-label-caps text-sm" id="sync-email" placeholder="PLAYER_ID@SYSTEM.NET" required="" type="email">
 <div class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
 <span class="material-symbols-outlined text-outline text-xs animate-pulse-fast">sync</span>
 </div>
@@ -419,25 +439,56 @@
 <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors underline" href="#">Bảo mật</a>
 <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors underline" href="#">Hỗ trợ</a>
 </nav>
-<div class="flex items-center gap-4"><a href="https://discord.gg/6XMcE3AAx" target="_blank" class="flex items-center gap-1 text-[9px] font-label-caps text-xp-green px-2 py-1 border border-xp-green/20 rounded hover:bg-xp-green/10 transition-colors group">
-    <svg class="w-3 h-3 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"></path>
-    </svg>
+<div class="flex items-center gap-4"><a class="flex items-center gap-1 text-[9px] font-label-caps text-xp-green px-2 py-1 border border-xp-green/20 rounded hover:bg-xp-green/10 transition-colors group" href="https://discord.gg/6XMcE3AAx" target="_blank">
+<svg class="w-3 h-3 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"></path>
+</svg>
     DISCORD
 </a>
 <div class="flex items-center gap-1 text-[9px] font-label-caps text-xp-green px-2 py-1 border border-xp-green/20 rounded">
 <span class="material-symbols-outlined text-[10px]">cloud_sync</span>
                 BACKEND_SYNC: OK
             </div>
-<span class="material-symbols-outlined text-outline cursor-pointer hover:text-xp-green transition-colors">public</span>
+<div class="w-6 h-6 cursor-pointer hover:brightness-110 transition-all overflow-hidden rounded-sm"><img src="https://lh3.googleusercontent.com/aida/AP1WRLseG8JFNE8-ti1epHD37YJPfA9CfT9ZVRTcZfKwgX1zUjTFXtx6WOXWDfC_sqixNB2DZNcSnVQicwmhMMG7P29b0zoulhW_MEUq8bO_DjKJs8EmQAYyVVfY_Tqnl_uu0e2NAddktG4QDXL7pkg4YVxJv2ksJ86K4P5xwIagrsvHEl143jFbNtJDn3HjjeLh0ZArhA7PKeYlQTgr39Lhe9TlHe2ddDdB9Mo9KDdiiYuSLsOZUghd-GTR-T0" alt="Minecraft Grass Block" class="w-full h-full object-cover"></div>
 <span class="material-symbols-outlined text-outline cursor-pointer hover:text-xp-green transition-colors">shield</span>
 </div>
 </div>
 </footer>
 <script>
     /**
-     * Persistent MinecraftDB Service using LocalStorage
-     * Updated to simulate "Centralized Database Sync"
+     * Custom Modal Logic
+     */
+    const ModalSystem = {
+        overlay: document.getElementById('custom-modal-overlay'),
+        content: document.getElementById('custom-modal-content'),
+        title: document.getElementById('modal-title'),
+        message: document.getElementById('modal-message'),
+        btn: document.getElementById('modal-confirm-btn'),
+        icon: document.getElementById('modal-icon'),
+        onConfirm: null,
+
+        show(title, message, icon = 'info', btnText = 'Xác nhận', callback = null) {
+            this.title.innerText = title;
+            this.message.innerText = message;
+            this.icon.innerText = icon;
+            this.btn.innerText = btnText;
+            this.onConfirm = callback;
+            this.overlay.classList.remove('hidden');
+            this.overlay.classList.add('flex');
+        },
+
+        hide() {
+            this.overlay.classList.add('hidden');
+            this.overlay.classList.remove('flex');
+            if (this.onConfirm) this.onConfirm();
+            this.onConfirm = null;
+        }
+    };
+
+    ModalSystem.btn.addEventListener('click', () => ModalSystem.hide());
+
+    /**
+     * Persistent MinecraftDB Service
      */
     const MinecraftDB = {
         STORAGE_KEY: 'minecraft_user_registry',
@@ -446,7 +497,6 @@
         connect() {
             if (!localStorage.getItem(this.STORAGE_KEY)) {
                 localStorage.setItem(this.STORAGE_KEY, JSON.stringify({ users: [] }));
-                console.log("Database initialized: Persistent Registry created.");
             }
         },
 
@@ -465,7 +515,6 @@
             }
             db.users.push({ name, email: email.toLowerCase(), password });
             this._saveDB(db);
-            // Simulated synchronization message
             return { 
                 success: true, 
                 message: "Đăng ký thành công! Dữ liệu đã được đồng bộ hóa với bảng điều khiển của quản trị viên (ADMIN_CONSOLE)." 
@@ -499,11 +548,9 @@
     const registerTabBtn = document.getElementById('register-tab-btn');
     const loginForm = document.getElementById('login-form');
     const registerForm = document.getElementById('register-form');
-    
     const guestMessage = document.getElementById('guest-message');
     const authDownloadArea = document.getElementById('auth-download-area');
     const authSection = document.getElementById('auth-section');
-
     const userProfileWidget = document.getElementById('user-profile-widget');
     const userProfileName = document.getElementById('user-profile-name');
     const loginBtnHeader = document.getElementById('login-btn-header');
@@ -538,18 +585,19 @@
         const password = document.getElementById('register-password').value;
 
         if (!name || !email || !password) {
-            alert("Vui lòng điền đầy đủ thông tin.");
+            ModalSystem.show('LỖI DỮ LIỆU', 'Vui lòng điền đầy đủ thông tin.', 'error');
             return;
         }
 
         const result = MinecraftDB.registerUser(name, email, password);
         
         if (result.success) {
-            alert(result.message);
-            switchToLogin();
-            document.getElementById('login-email').value = email;
+            ModalSystem.show('ĐĂNG KÝ THÀNH CÔNG', result.message, 'check_circle', 'Xác nhận', () => {
+                switchToLogin();
+                document.getElementById('login-email').value = email;
+            });
         } else {
-            alert(result.message);
+            ModalSystem.show('LỖI HỆ THỐNG', result.message, 'error');
         }
     });
 
@@ -561,13 +609,20 @@
         const result = MinecraftDB.authenticate(emailInput, passwordInput);
 
         if (result.success) {
-            alert("Truy cập thành công! Hệ thống máy chủ đã xác thực quyền truy cập tệp tin của bạn.");
-            updateUI();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-            setTimeout(() => { window.location.hash = "top"; }, 500);
+            ModalSystem.show('XÁC THỰC THÀNH CÔNG', "Truy cập thành công! Hệ thống máy chủ đã xác thực quyền truy cập tệp tin của bạn.", 'security', 'Tiếp tục', () => {
+                updateUI();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                setTimeout(() => { window.location.hash = "top"; }, 500);
+            });
         } else {
-            alert(result.message);
+            ModalSystem.show('LỖI TRUY CẬP', result.message, 'lock');
         }
+    });
+
+    // Sync Form Logic
+    document.getElementById('sync-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        ModalSystem.show('DATABASE SYNC', 'Dữ liệu đã được đồng bộ hóa thành công với Máy Chủ Trung Tâm!', 'sync');
     });
 
     function updateUI() {
@@ -606,7 +661,7 @@
         window.location.reload();
     });
 
-    // --- OS Selection & Download Troll Logic ---
+    // --- OS Selection & Download Logic ---
     const osBtns = document.querySelectorAll('.os-btn');
     const downloadBtn = document.getElementById('download-btn');
     const btnText = document.getElementById('btn-text');
@@ -642,7 +697,9 @@
         setTimeout(() => {
             btnText.innerText = "XÁC MINH GÓI TIN - ĐANG GIẢI MÃ...";
             setTimeout(() => {
-                window.location.href = "https://youtu.be/dQw4w9WgXcQ?si=bwGcGFQqYL4PRQtq";
+                ModalSystem.show('DOWNLOAD COMPLETE', 'Quá trình tải xuống và giải mã đã hoàn tất. Nhấn FINISH để cài đặt.', 'verified_user', 'FINISH', () => {
+                    window.location.href = "https://youtu.be/dQw4w9WgXcQ?si=bwGcGFQqYL4PRQtq";
+                });
             }, 1000);
         }, 5000);
     });
@@ -673,6 +730,8 @@
         document.querySelector('.os-btn[data-os="windows"]').classList.add('bg-surface-container-highest', 'border-xp-green');
     });
 </script>
+
+
 
 
 </body></html>
